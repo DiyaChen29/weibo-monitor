@@ -1,17 +1,19 @@
 {
-  "timestamp": "2026-03-24T08:59:55.838294",
+  "run_time": "2026-03-24 09:17:34",
   "total_accounts": 1,
-  "total_new_posts": 0,
-  "results": {
-    "7852949543": {
-      "name": "测试账号",
-      "new_count": 0,
-      "error": "获取失败"
+  "success_accounts": 0,
+  "total_posts": 0,
+  "results": [
+    {
+      "status": "error",
+      "count": 0,
+      "message": "未获取到微博数据",
+      "account": {
+        "uid": "7852949543",
+        "name": "测试账号",
+        "enabled": true
+      }
     }
-  },
-  "github_actions_info": {
-    "runner_os": "Linux",
-    "github_repository": "DiyaChen29/weibo-monitor",
-    "github_run_id": "23481216390"
-  }
+  ],
+  "duration": "0:00:02.837081"
 }
