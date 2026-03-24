@@ -1,15 +1,15 @@
 {
   "accounts": [
     {
-      "uid": "2803301701",
-      "name": "人民日报",
-      "enabled": true
-    },
-    {
-      "uid": "1974576991",
-      "name": "央视新闻",
+      "uid": "7852949543",
+      "name": "测试账号",
       "enabled": true
     }
+  ],
+  "rss_sources": [
+    "https://rsshub.app/weibo/user/{uid}",
+    "https://rss.codelife.cc/weibo/user/{uid}",
+    "https://rsshub.rssforever.com/weibo/user/{uid}"
   ],
   "settings": {
     "max_posts_per_account": 10,
