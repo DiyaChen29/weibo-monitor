@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {
+      "uid": "2803301701",
+      "name": "人民日报",
+      "enabled": true
+    },
+    {
+      "uid": "1974576991",
+      "name": "央视新闻",
+      "enabled": true
+    }
+  ],
+  "settings": {
+    "max_posts_per_account": 10,
+    "save_full_content": true,
+    "enable_notifications": false,
+    "check_interval_hours": 4
+  }
+}
