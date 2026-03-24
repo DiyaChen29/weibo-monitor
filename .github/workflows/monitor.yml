@@ -1,28 +1,50 @@
-name: weibo-monitor
+name: 微博监控
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */4 * * *'  # 每4小时运行一次
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   monitor:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
     steps:
-      - uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-      - run: pip install requests beautifulsoup4 python-dateutil lxml
-      - run: mkdir -p data logs
-      - run: python scripts/github_monitor.py
-      - run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add data/ logs/ || true
-          if ! git diff --staged --quiet; then
-            git commit -m "🤖 更新监控数据"
-            git push
-          fi
+    - name: 检出代码
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+      
+    - name: 设置Python环境
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+        
+    - name: 安装依赖
+      run: |
+        pip install requests beautifulsoup4 python-dateutil lxml
+        
+    - name: 创建必要目录
+      run: |
+        mkdir -p data logs
+        
+    - name: 运行微博监控
+      run: |
+        python scripts/github_monitor.py
+      continue-on-error: true
+        
+    - name: 提交更新的数据
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git add data/ logs/ config.json || true
+        if ! git diff --staged --quiet; then
+          git commit -m "🤖 更新监控数据 $(date +'%Y-%m-%d %H:%M:%S')"
+          git push
+        else
+          echo "没有新数据需要提交"
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
