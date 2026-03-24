@@ -1,15 +1,10 @@
 {
-  "timestamp": "2026-03-24T08:56:59.773617",
-  "total_accounts": 2,
+  "timestamp": "2026-03-24T08:59:55.838294",
+  "total_accounts": 1,
   "total_new_posts": 0,
   "results": {
-    "2803301701": {
-      "name": "人民日报",
-      "new_count": 0,
-      "error": "获取失败"
-    },
-    "1974576991": {
-      "name": "央视新闻",
+    "7852949543": {
+      "name": "测试账号",
       "new_count": 0,
       "error": "获取失败"
     }
@@ -17,6 +12,6 @@
   "github_actions_info": {
     "runner_os": "Linux",
     "github_repository": "DiyaChen29/weibo-monitor",
-    "github_run_id": "23481100746"
+    "github_run_id": "23481216390"
   }
 }
