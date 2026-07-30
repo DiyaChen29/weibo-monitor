@@ -4342,3 +4342,9 @@
 2026-07-30 14:08:50,761 - ERROR - 获取containerid失败: HTTPSConnectionPool(host='visitor.passport.weibo.cn', port=443): Max retries exceeded with url: /visitor/visitor?entry=sinawap&a=enter&url=https%3A%2F%2Fm.weibo.cn%2Fapi%2Fcontainer%2FgetIndex%3Ftype%3Duid%26value%3D7852949543&domain=.weibo.cn&sudaref=&ua=php-sso_sdk_client-0.6.36&_rand=1785420500.0765 (Caused by NewConnectionError("HTTPSConnection(host='visitor.passport.weibo.cn', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable"))
 2026-07-30 14:08:50,761 - WARNING - ❌ 测试账号 (7852949543): 未获取到微博数据
 2026-07-30 14:08:50,761 - INFO - 📊 监控完成: 0/1 成功, 共获取 0 条微博
+2026-07-30 17:37:43,800 - INFO - 🚀 开始微博监控任务
+2026-07-30 17:37:43,800 - INFO - 开始监控账号: 测试账号 (7852949543)
+2026-07-30 17:37:43,800 - ERROR - 获取用户信息异常: 'request_delay'
+2026-07-30 17:37:47,918 - ERROR - 获取containerid失败: Expecting value: line 1 column 1 (char 0)
+2026-07-30 17:37:47,918 - WARNING - ❌ 测试账号 (7852949543): 未获取到微博数据
+2026-07-30 17:37:47,919 - INFO - 📊 监控完成: 0/1 成功, 共获取 0 条微博
